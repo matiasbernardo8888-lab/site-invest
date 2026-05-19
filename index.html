@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bernardo Matias | Assessoria de Investimentos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary: #0A2463;
+            --primary-hover: #06163D;
+            --text-dark: #111827;
+            --text-muted: #6B7280;
+            --bg-light: #F9FAFB;
+            --border: #E5E7EB;
+            --max-width: 1140px;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { background: #FFF; color: var(--text-dark); line-height: 1.6; }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section { padding: 100px 0; }
+        .bg-light { background: var(--bg-light); }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #FFF;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn:hover { background: var(--primary-hover); }
+
+        /* HEADER */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .nav-links a {
+            margin-left: 32px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* HERO */
+        .hero { padding: 120px 0; text-align: center; }
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+        .pillars {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 80px;
+        }
+        .pillar i { color: var(--primary); margin-bottom: 12px; }
+        .pillar p { font-weight: 600; margin: 0; font-size: 16px; }
+
+        /* GRID */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .card {
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 12px;
+            background: #FFF;
+        }
+        .card h3 { margin: 16px 0 12px 0; }
+        .card i { color: var(--primary); }
+
+        /* CONTATO */
+        .form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .form input {
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .pillars, .grid-3 { grid-template-columns: 1fr; flex-direction: column; gap: 40px; }
+            .nav-links { display: none; }
+            section { padding: 80px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <div class="logo">Bernardo Matias Invest</div>
+            <nav class="nav-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Invista com estratégia.<br>Eu te ajudo a criar uma carteira diversificada.</h1>
+                <p>Assessoria personalizada em ações, FIIs e renda fixa para seu patrimônio crescer com segurança.</p>
+                <a href="#contato" class="btn">Agendar diagnóstico gratuito</a>
+
+                <div class="pillars">
+                    <div class="pillar">
+                        <i data-lucide="pie-chart"></i>
+                        <p>Diversificação</p>
+                    </div>
+                    <div class="pillar">
+                        <i data-lucide="shield-check"></i>
+                        <p>Segurança</p>
+                    </div>
+                    <div class="pillar">
+                        <i data-lucide="trending-up"></i>
+                        <p>Longo Prazo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="bg-light">
+            <div class="container">
+                <h2 class="section-title">Sobre</h2>
+                <p class="section-subtitle">Sou Bernardo Matias e ajudo meus clientes a investir com clareza e tranquilidade. Montamos juntos uma carteira diversificada alinhada ao seu perfil, objetivos e tolerância a risco. Sem promessas milagrosas, só estratégia e acompanhamento.</p>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="container">
+                <h2 class="section-title">Serviços</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <i data-lucide="layout-dashboard"></i>
+                        <h3>Carteira Personalizada</h3>
+                        <p>Montagem de carteira diversificada de ações, FIIs e renda fixa sob medida pra você.</p>
+                    </div>
+                    <div class="card">
+                        <i data-lucide="calendar-check"></i>
+                        <h3>Acompanhamento Mensal</h3>
+                        <p>Reuniões mensais para rebalancear, tirar dúvidas e ajustar a rota quando necessário.</p>
+                    </div>
+                    <div class="card">
+                        <i data-lucide="graduation-cap"></i>
+                        <h3>Educação Financeira</h3>
+                        <p>Você entende o porquê de cada decisão. Investir sem depender de ninguém.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="bg-light">
+            <div class="container">
+                <h2 class="section-title">Vamos conversar?</h2>
+                <p class="section-subtitle">Preencha abaixo ou me chama direto no WhatsApp.</p>
+                <form class="form">
+                    <input type="text" placeholder="Nome completo" required>
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <input type="tel" placeholder="WhatsApp" required>
+                    <a href="https://wa.me/5533991925305" class="btn" style="text-align:center;">Chamar no WhatsApp</a>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Bernardo Matias Invest. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
