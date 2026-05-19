@@ -80,30 +80,6 @@
             border: 3px solid #64ffda;
             box-shadow: 0 0 40px rgba(100, 255, 218, 0.3);
         }
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin: 80px 0;
-        }
-        .stat-card {
-            background: #112240;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #233554;
-            text-align: center;
-            transition: all 0.3s;
-        }
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(2, 12, 27, 0.7);
-        }
-        .stat-card h3 {
-            font-size: 36px;
-            color: #64ffda;
-            margin-bottom: 10px;
-        }
-        .stat-card p { color: #8892b0; }
         .chart-section {
             background: #112240;
             padding: 60px;
@@ -142,7 +118,6 @@
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; }
             .hero-text h1 { font-size: 40px; }
-            .stats { grid-template-columns: 1fr; }
             .hero-img img { width: 250px; height: 250px; }
         }
     </style>
@@ -152,7 +127,7 @@
         <div class="container">
             <nav>
                 <div class="logo">B<span>.Matias</span> Invest</div>
-                <a href="https://wa.me/5533991925305?text=Quero%20investir%20com%20você" class="btn">Falar no WhatsApp</a>
+                <a href="https://wa.me/5533991925305?text=Quero%20saber%20mais" class="btn">WhatsApp</a>
             </nav>
         </div>
     </header>
@@ -160,41 +135,24 @@
     <main class="container">
         <section class="hero">
             <div class="hero-text">
-                <h1>Gestão de Investimentos <span>com Performance</span></h1>
-                <p>Estratégias de trade e alocação para multiplicar seu patrimônio. Análise técnica, risco controlado e transparência total.</p>
-                <a href="https://wa.me/5533991925305?text=Quero%20uma%20análise%20gratuita" class="btn">Análise Gratuita →</a>
+                <h1>Bernardo Matias <br><span>Gestão de Investimentos</span></h1>
+                <p>Estratégias de trade e alocação para seu patrimônio. Entre em contato para mais informações.</p>
+                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20conversar" class="btn">Falar comigo →</a>
             </div>
             <div class="hero-img">
                 <img src="perfil.jpg" alt="Bernardo Matias">
             </div>
         </section>
 
-        <section class="stats">
-            <div class="stat-card">
-                <h3>+127%</h3>
-                <p>Rentabilidade média anual</p>
-            </div>
-            <div class="stat-card">
-                <h3>1:3</h3>
-                <p>Relação Risco x Retorno</p>
-            </div>
-            <div class="stat-card">
-                <h3>24/7</h3>
-                <p>Monitoramento de mercado</p>
-            </div>
-        </section>
-
         <section class="chart-section">
-            <h2 style="margin-bottom: 30px; color: #ccd6f6;">Performance de Estratégia</h2>
+            <h2 style="margin-bottom: 30px; color: #ccd6f6; text-align: center;">Mercado</h2>
             <div class="chart"></div>
-            <p style="margin-top: 20px; color: #8892b0; text-align: center;">Resultados passados não garantem rentabilidade futura. Invista com consciência.</p>
         </section>
     </main>
 
     <footer>
         <div class="container">
             <p>© 2026 Bernardo Matias Invest. Todos os direitos reservados.</p>
-            <p style="margin-top: 10px; font-size: 14px;">Este site não constitui recomendação de investimento.</p>
         </div>
     </footer>
 </body>
