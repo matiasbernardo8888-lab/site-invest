@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bernardo Matias | Gestão de Investimentos</title>
+    <title>Bernardo Matias | Assessoria de Investimentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --dark-blue: #0a192f;
+            --navy: #112240;
+            --light-navy: #233554;
+            --slate: #8892b0;
+            --light-slate: #ccd6f6;
+            --accent: #64ffda;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a192f 0%, #112240 50%, #0a192f 100%);
-            color: #ccd6f6;
-            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-blue);
+            color: var(--light-slate);
+            line-height: 1.6;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
         }
         header {
             padding: 20px 0;
-            border-bottom: 1px solid #233554;
-            backdrop-filter: blur(10px);
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 100;
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
         }
         nav {
             display: flex;
@@ -31,94 +43,142 @@
             align-items: center;
         }
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            color: #64ffda;
+            color: var(--accent);
+            letter-spacing: 1px;
         }
-        .logo span { color: #ccd6f6; }
         .btn {
             background: transparent;
-            color: #64ffda;
-            border: 1px solid #64ffda;
-            padding: 12px 24px;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 10px 20px;
             border-radius: 4px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 400;
+            font-size: 14px;
             transition: all 0.3s;
         }
         .btn:hover {
             background: rgba(100, 255, 218, 0.1);
-            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--dark-blue);
+            font-weight: 600;
+            padding: 14px 28px;
+            font-size: 16px;
+        }
+        .btn-primary:hover {
+            background: #52d4b8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
         }
         .hero {
+            padding-top: 180px;
+            padding-bottom: 100px;
             display: flex;
             align-items: center;
-            min-height: 90vh;
-            gap: 60px;
-            padding: 60px 0;
+            gap: 50px;
         }
-        .hero-text { flex: 1; }
-        .hero-text h1 {
-            font-size: 56px;
-            color: #ccd6f6;
+        .hero-text { flex: 1.2; }
+        .hero-text .intro {
+            color: var(--accent);
+            font-size: 16px;
             margin-bottom: 20px;
-            line-height: 1.1;
+            font-weight: 400;
         }
-        .hero-text h1 span { color: #64ffda; }
+        .hero-text h1 {
+            font-size: 68px;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--light-slate);
+            margin-bottom: 10px;
+        }
+        .hero-text h2 {
+            font-size: 40px;
+            color: var(--slate);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
         .hero-text p {
-            font-size: 20px;
-            color: #8892b0;
-            margin-bottom: 40px;
-            max-width: 500px;
+            font-size: 18px;
+            color: var(--slate);
+            max-width: 540px;
+            margin-bottom: 50px;
         }
         .hero-img { flex: 1; text-align: center; }
         .hero-img img {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #64ffda;
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.3);
-        }
-        .chart-section {
-            background: #112240;
-            padding: 60px;
+            width: 320px;
+            height: 320px;
             border-radius: 8px;
-            margin: 80px 0;
-            border: 1px solid #233554;
+            object-fit: cover;
+            border: 2px solid var(--light-navy);
+            filter: grayscale(20%);
+            transition: all 0.3s;
         }
-        .chart {
-            height: 300px;
-            background: linear-gradient(to top, rgba(100, 255, 218, 0.1), transparent);
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
+        .hero-img img:hover {
+            filter: none;
+            border-color: var(--accent);
         }
-        .chart::after {
+        .section {
+            padding: 100px 0;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--light-slate);
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .section-title::after {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 70%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><path d="M0,200 Q150,100 300,150 T600,100 T900,180 T1200,120" stroke="%2364ffda" stroke-width="3" fill="none"/><path d="M0,200 Q150,100 300,150 T600,100 T900,180 T1200,120 L1200,300 L0,300 Z" fill="url(%23grad)" opacity="0.3"/><defs><linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%2364ffda;stop-opacity:0.5" /><stop offset="100%" style="stop-color:%2364ffda;stop-opacity:0" /></linearGradient></defs></svg>') no-repeat center;
-            background-size: cover;
-            animation: pulse 3s infinite ease-in-out;
+            display: block;
+            height: 1px;
+            width: 300px;
+            background-color: var(--light-navy);
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--navy);
+            padding: 35px 30px;
+            border-radius: 4px;
+            border: 1px solid var(--light-navy);
+            transition: all 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+        .service-card h3 {
+            color: var(--light-slate);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: var(--slate);
+            font-size: 15px;
         }
         footer {
             text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid #233554;
-            color: #8892b0;
+            padding: 30px 0;
+            border-top: 1px solid var(--light-navy);
+            color: var(--slate);
+            font-size: 14px;
         }
         @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
             .hero-text h1 { font-size: 40px; }
-            .hero-img img { width: 250px; height: 250px; }
+            .hero-text h2 { font-size: 28px; }
+            .hero-text p { margin: 0 auto 40px; }
+            .services { grid-template-columns: 1fr; }
+            .section-title::after { width: 100px; }
         }
     </style>
 </head>
@@ -126,8 +186,8 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">B<span>.Matias</span> Invest</div>
-                <a href="https://wa.me/5533991925305?text=Quero%20saber%20mais" class="btn">WhatsApp</a>
+                <div class="logo">BERNARDO MATIAS</div>
+                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20agendar%20uma%20consulta" class="btn">Agende sua Consulta</a>
             </nav>
         </div>
     </header>
@@ -135,24 +195,39 @@
     <main class="container">
         <section class="hero">
             <div class="hero-text">
-                <h1>Bernardo Matias <br><span>Gestão de Investimentos</span></h1>
-                <p>Estratégias de trade e alocação para seu patrimônio. Entre em contato para mais informações.</p>
-                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20conversar" class="btn">Falar comigo →</a>
+                <p class="intro">Olá, meu nome é</p>
+                <h1>Bernardo Matias.</h1>
+                <h2>Eu construo patrimônio.</h2>
+                <p>Sou especialista em gestão de investimentos e alocação de ativos. Meu trabalho é analisar o mercado para proteger e multiplicar o capital dos meus clientes através de estratégias personalizadas em Renda Fixa, Renda Variável e Fundos de Investimento.</p>
+                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20agendar%20uma%20consulta%20de%20investimentos" class="btn btn-primary">Agende sua Consulta</a>
             </div>
             <div class="hero-img">
                 <img src="perfil.jpg" alt="Bernardo Matias">
             </div>
         </section>
 
-        <section class="chart-section">
-            <h2 style="margin-bottom: 30px; color: #ccd6f6; text-align: center;">Mercado</h2>
-            <div class="chart"></div>
+        <section class="section">
+            <h2 class="section-title">O Que Eu Faço</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Análise de Perfil</h3>
+                    <p>Entendo seus objetivos, tolerância a risco e prazo para montar uma carteira que faça sentido para sua vida, não para o mercado.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Alocação de Ativos</h3>
+                    <p>Diversificação inteligente entre Renda Fixa, Fundos Imobiliários, Ações e investimentos no exterior para proteger seu patrimônio.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Acompanhamento</h3>
+                    <p>Monitoramento constante da sua carteira e do cenário econômico, com ajustes estratégicos quando necessário para otimizar resultados.</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2026 Bernardo Matias Invest. Todos os direitos reservados.</p>
+            <p>© 2026 Bernardo Matias Investimentos</p>
         </div>
     </footer>
 </body>
