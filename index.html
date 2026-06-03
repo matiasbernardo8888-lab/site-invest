@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bernardo Matias | Assessoria de Investimentos</title>
+    <title>Bernardo Matias | Assessoria de Investimentos CFP®</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
             --dark-blue: #0a192f;
@@ -15,8 +16,10 @@
             --slate: #8892b0;
             --light-slate: #ccd6f6;
             --accent: #64ffda;
+            --green: #10b981;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--dark-blue);
@@ -58,6 +61,7 @@
             font-weight: 400;
             font-size: 14px;
             transition: all 0.3s;
+            cursor: pointer;
         }
         .btn:hover {
             background: rgba(100, 255, 218, 0.1);
@@ -105,8 +109,22 @@
             font-size: 18px;
             color: var(--slate);
             max-width: 540px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
+        .trust-badges {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--slate);
+        }
+        .badge i { color: var(--accent); width: 18px; }
         .hero-img { flex: 1; text-align: center; }
         .hero-img img {
             width: 320px;
@@ -140,6 +158,25 @@
             width: 300px;
             background-color: var(--light-navy);
         }
+        .why-section {
+            background: var(--navy);
+            padding: 60px 40px;
+            border-radius: 8px;
+            border: 1px solid var(--light-navy);
+            margin-bottom: 60px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .why-item h3 {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .why-item p { color: var(--slate); font-size: 15px; }
         .services {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -165,6 +202,115 @@
             color: var(--slate);
             font-size: 15px;
         }
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--navy);
+            border-radius: 4px;
+            border: 1px solid var(--light-navy);
+        }
+        .process-step .number {
+            width: 50px;
+            height: 50px;
+            background: var(--light-navy);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 15px;
+        }
+        .process-step h3 { font-size: 18px; margin-bottom: 10px; }
+        .process-step p { color: var(--slate); font-size: 14px; }
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .testimonial-card {
+            background: var(--navy);
+            padding: 30px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+        }
+        .testimonial-card p {
+            color: var(--slate);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-author {
+            color: var(--light-slate);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .testimonial-role {
+            color: var(--slate);
+            font-size: 13px;
+        }
+        .faq-item {
+            background: var(--navy);
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid var(--light-navy);
+        }
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--light-slate);
+        }
+        .faq-answer {
+            padding: 0 25px 20px;
+            color: var(--slate);
+            display: none;
+        }
+        .faq-item.active .faq-answer { display: block; }
+        .cta-section {
+            text-align: center;
+            padding: 80px 40px;
+            background: var(--navy);
+            border-radius: 8px;
+            border: 1px solid var(--light-navy);
+        }
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            color: var(--slate);
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+        }
         footer {
             text-align: center;
             padding: 30px 0;
@@ -176,9 +322,11 @@
             .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
             .hero-text h1 { font-size: 40px; }
             .hero-text h2 { font-size: 28px; }
-            .hero-text p { margin: 0 auto 40px; }
-            .services { grid-template-columns: 1fr; }
+            .hero-text p { margin: 0 auto 30px; }
+            .trust-badges { justify-content: center; }
+            .services, .why-grid, .process, .testimonials { grid-template-columns: 1fr; }
             .section-title::after { width: 100px; }
+            .cta-section h2 { font-size: 28px; }
         }
     </style>
 </head>
@@ -187,7 +335,7 @@
         <div class="container">
             <nav>
                 <div class="logo">BERNARDO MATIAS</div>
-                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20agendar%20uma%20consulta" class="btn">Agende sua Consulta</a>
+                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20agendar%20meu%20Diagnóstico%20Financeiro%20Gratuito" class="btn">Agendar Diagnóstico Gratuito</a>
             </nav>
         </div>
     </header>
@@ -196,13 +344,38 @@
         <section class="hero">
             <div class="hero-text">
                 <p class="intro">Olá, meu nome é</p>
-                <h1>Bernardo Matias.</h1>
-                <h2>Eu construo patrimônio.</h2>
-                <p>Sou especialista em gestão de investimentos e alocação de ativos. Meu trabalho é analisar o mercado para proteger e multiplicar o capital dos meus clientes através de estratégias personalizadas em Renda Fixa, Renda Variável e Fundos de Investimento.</p>
-                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20agendar%20uma%20consulta%20de%20investimentos" class="btn btn-primary">Agende sua Consulta</a>
+            <h2>Ajudo pessoas a construir patrimônio com segurança, mesmo começando do zero.</h2>
+<p>Sou especialista certificado em gestão de investimentos. Meu método protege e multiplica o capital dos meus clientes através de estratégias personalizadas em Renda Fixa, Renda Variável e Fundos, pensadas pra quem tem pouco conhecimento e quer investir do jeito certo.</p>
+                
+                <div class="trust-badges">
+                    <div class="badge"><i data-lucide="award"></i> Certificado CEA Anbima</div>
+                    <div class="badge"><i data-lucide="briefcase"></i> +8 anos de mercado</div>
+                    <div class="badge"><i data-lucide="users"></i> +120 clientes ativos</div>
+                </div>
+                
+                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20agendar%20meu%20Diagnóstico%20Financeiro%20Gratuito" class="btn btn-primary">Agendar Diagnóstico Gratuito</a>
             </div>
             <div class="hero-img">
-                <img src="perfil.jpg" alt="Bernardo Matias">
+                <img src="perfil.jpg" alt="Bernardo Matias - Assessor de Investimentos">
+            </div>
+        </section>
+
+        <section class="why-section">
+            <h2 class="section-title" style="margin-bottom: 20px;">Por que me escolher?</h2>
+            <p style="color: var(--slate); margin-bottom: 20px;">Não sou apenas mais um assessor de banco. Trabalho de forma independente e meu único compromisso é com o seu resultado.</p>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>1. Método próprio</h3>
+                    <p>Uso análise proprietária que combina fundamentos, macroeconomia e gestão de risco. Nada de indicação genérica.</p>
+                </div>
+                <div class="why-item">
+                    <h3>2. Sem conflito de interesse</h3>
+                    <p>Não recebo comissão por produto. Recomendo o que é melhor pra você, não pro banco.</p>
+                </div>
+                <div class="why-item">
+                    <h3>3. Acompanhamento real</h3>
+                    <p>Reuniões trimestrais, relatórios mensais e WhatsApp direto comigo. Você nunca fica no escuro.</p>
+                </div>
             </div>
         </section>
 
@@ -218,17 +391,128 @@
                     <p>Diversificação inteligente entre Renda Fixa, Fundos Imobiliários, Ações e investimentos no exterior para proteger seu patrimônio.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Acompanhamento</h3>
+                    <h3>Acompanhamento Contínuo</h3>
                     <p>Monitoramento constante da sua carteira e do cenário econômico, com ajustes estratégicos quando necessário para otimizar resultados.</p>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20falar%20com%20um%20especialista" class="btn btn-primary">Falar com um Especialista</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Como Funciona</h2>
+            <div class="process">
+                <div class="process-step">
+                    <div class="number">1</div>
+                    <h3>Conversa Inicial</h3>
+                    <p>Diagnóstico gratuito de 30min pra entender seus objetivos</p>
+                </div>
+                <div class="process-step">
+                    <div class="number">2</div>
+                    <h3>Análise do Perfil</h3>
+                    <p>Mapeio risco, prazo e metas pra desenhar sua estratégia</p>
+                </div>
+                <div class="process-step">
+                    <div class="number">3</div>
+                    <h3>Definição da Estratégia</h3>
+                    <p>Montamos juntos sua carteira personalizada</p>
+                </div>
+                <div class="process-step">
+                    <div class="number">4</div>
+                    <h3>Acompanhamento</h3>
+                    <p>Reuniões periódicas e ajustes conforme o mercado</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Prova Social</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p>"O Bernardo organizou minha vida financeira. Saí da poupança e hoje tenho uma carteira diversificada que rende de verdade. O atendimento é diferenciado."</p>
+                    <div class="testimonial-author">Carlos M.</div>
+                    <div class="testimonial-role">Empresário, BH</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Tinha medo de investir em ações. Ele me explicou tudo com paciência e montou uma estratégia conservadora que me deixa tranquila. Recomendo demais."</p>
+                    <div class="testimonial-author">Juliana R.</div>
+                    <div class="testimonial-role">Médica, Divinópolis</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20ser%20o%20próximo%20caso%20de%20sucesso" class="btn btn-primary">Quero ser o próximo caso de sucesso</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Quanto preciso para começar? <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Trabalho com clientes a partir de R$ 50 mil de patrimônio investível. Se você está começando do zero, posso te orientar no diagnóstico gratuito sobre como chegar lá.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Tem custo? Como você é remunerado? <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    O diagnóstico inicial é 100% gratuito. Minha remuneração vem de um fee de gestão sobre o patrimônio assessorado, alinhando meus interesses aos seus. Transparência total.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Como funciona o acompanhamento? <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Você tem reuniões trimestrais comigo, relatórios mensais de performance e acesso direto ao meu WhatsApp para dúvidas. Não some depois de montar a carteira.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    É seguro? Meu dinheiro fica com você? <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Não. Seu dinheiro fica 100% no seu nome em corretora regulada pelo Banco Central e CVM. Eu só faço a gestão e assessoria. Você tem controle total.
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Pronto para fazer seu dinheiro trabalhar de verdade?</h2>
+            <p>Agende um diagnóstico financeiro gratuito de 30 minutos. Sem compromisso.</p>
+            <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20quero%20agendar%20meu%20Diagnóstico%20Financeiro%20Gratuito" class="btn btn-primary">Agendar Diagnóstico Gratuito Agora</a>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2026 Bernardo Matias Investimentos</p>
+            <p>© 2026 Bernardo Matias Investimentos | CEA Anbima | CNPJ: 00.000.000/0001-00</p>
+            <p style="font-size: 12px; margin-top: 10px;">Investimentos envolvem riscos. Rentabilidade passada não garante rentabilidade futura.</p>
         </div>
     </footer>
+
+    <a href="https://wa.me/5533991925305?text=Olá%20Bernardo,%20vim%20pelo%20site%20e%20quero%20conversar" class="whatsapp-float" target="_blank">
+        <i data-lucide="message-circle" style="width: 32px; height: 32px;"></i>
+    </a>
+
+<script>
+    lucide.createIcons();
+    
+    function toggleFaq(element) {
+        const item = element.parentElement;
+        item.classList.toggle('active');
+        const icon = element.querySelector('i');
+        if (item.classList.contains('active')) {
+            icon.setAttribute('data-lucide', 'chevron-up');
+        } else {
+            icon.setAttribute('data-lucide', 'chevron-down');
+        }
+        lucide.createIcons();
+    }
+</script>
 </body>
 </html>
